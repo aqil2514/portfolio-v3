@@ -1,0 +1,152 @@
+@import "mixins";
+
+#profile {
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 1)), url("../img/me.jpg");
+  height: 100vh;
+  background-position: center;
+  background-size: cover;
+  background-attachment: scroll;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+
+  figure {
+    position: relative;
+
+    img {
+      width: 300px;
+      height: 300px;
+      object-fit: cover;
+      border-radius: 50%;
+      cursor: pointer;
+      transition: 0.3s;
+
+      &:hover {
+        filter: brightness(50%);
+      }
+    }
+
+    figcaption {
+      position: absolute;
+      color: white;
+      font-family: "Poppins", sans-serif;
+      font-size: 1.5rem;
+      top: 45%;
+      left: 30%;
+      font-weight: 900;
+      font-style: italic;
+      cursor: pointer;
+      visibility: hidden;
+      opacity: 0;
+      transition: 0.3s;
+    }
+
+    &:hover figcaption {
+      visibility: visible;
+      opacity: 1;
+    }
+
+    &:hover img {
+      filter: brightness(50%);
+    }
+  }
+
+  #select {
+    font-family: "Poppins", sans-serif;
+    font-weight: 900;
+    font-style: italic;
+    color: white;
+    background-color: #333;
+    text-align: center;
+    width: 20rem;
+    margin-top: 10px;
+  }
+
+  #tombol-profesi {
+    @include button-style(white);
+  }
+
+  #tombol-profesi:hover {
+    background-color: white;
+    color: black;
+  }
+}
+
+#profile-container {
+  @include content-font("Poppins");
+  position: fixed;
+  display: none;
+  width: 80%;
+  height: 75%;
+  padding: 1rem;
+  overflow-y: scroll;
+  margin: 0 auto;
+  background-color: #161515;
+  border-radius: 1rem;
+  border: 0.5rem double aqua;
+  text-align: justify;
+  z-index: 999;
+
+  header {
+    @include justify(space-around);
+
+    h2 {
+      @include content-font("Lobster");
+      text-align: center;
+    }
+
+    img {
+      width: 15rem;
+      height: 12rem;
+      border-radius: 1rem;
+      object-fit: cover;
+    }
+
+    ul {
+      li {
+        list-style: disc;
+      }
+    }
+  }
+
+  main {
+    button {
+      @include button-style(aqua);
+    }
+
+    button:hover {
+      background-color: aqua;
+      color: black;
+    }
+  }
+}
+
+/* Chrome, Edge and Safari */
+#profile-container::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+
+#profile-container::-webkit-scrollbar-track {
+  border-radius: 20px;
+  background-color: #333333;
+
+  &:hover {
+    background-color: #515151;
+  }
+  &:active {
+    background-color: #060606;
+  }
+}
+
+#profile-container::-webkit-scrollbar-thumb {
+  border-radius: 18px;
+  background-color: #888888;
+
+  &:hover,
+  &:active {
+    background-color: #62a34b;
+  }
+}

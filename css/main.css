@@ -1,0 +1,953 @@
+#navbar {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  background-color: #333;
+  position: fixed;
+  width: 100%;
+  z-index: 999;
+}
+#navbar .gif-title h1 {
+  font-family: "Lobster", sans-serif;
+  color: white;
+  margin: 1rem;
+  font-size: 2rem;
+  cursor: default;
+}
+#navbar .content ul {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  font-family: "Poppins", sans-serif;
+  font-weight: bold;
+}
+#navbar .content ul li {
+  list-style: none;
+  margin: 1.2rem 1rem 0;
+  transition: 0.3s;
+}
+#navbar .content ul li a {
+  text-decoration: none;
+  color: white;
+  font-size: 1.2rem;
+  transition: 0.3s;
+}
+#navbar .content ul li a::after {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 0.2rem;
+  background-color: white;
+  transform: scaleX(0);
+  transition: 0.3s;
+}
+#navbar .content ul li a:hover::after {
+  transform: scaleX(1);
+}
+#navbar .menu-mobile {
+  display: none;
+  margin: 0.5rem 2rem;
+  width: 3rem;
+  height: 3rem;
+  cursor: pointer;
+  border-radius: 50%;
+  padding: 5px;
+  transition: 0.3s;
+}
+#navbar .menu-mobile line {
+  transition: 0.5s;
+}
+#navbar .menu-mobile .line-1-active {
+  transform: rotateZ(45deg) translateY(4px);
+  transform-origin: center;
+}
+#navbar .menu-mobile .line-2-active {
+  opacity: 0;
+}
+#navbar .menu-mobile .line-3-active {
+  transform: rotateZ(-45deg) translateY(-4px);
+  transform-origin: center;
+}
+
+#profile {
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0.5), rgb(0, 0, 0)), url("../img/me.jpg");
+  height: 100vh;
+  background-position: center;
+  background-size: cover;
+  background-attachment: scroll;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+#profile figure {
+  position: relative;
+}
+#profile figure img {
+  width: 300px;
+  height: 300px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: 0.3s;
+}
+#profile figure img:hover {
+  filter: brightness(50%);
+}
+#profile figure figcaption {
+  position: absolute;
+  color: white;
+  font-family: "Poppins", sans-serif;
+  font-size: 1.5rem;
+  top: 45%;
+  left: 30%;
+  font-weight: 900;
+  font-style: italic;
+  cursor: pointer;
+  visibility: hidden;
+  opacity: 0;
+  transition: 0.3s;
+}
+#profile figure:hover figcaption {
+  visibility: visible;
+  opacity: 1;
+}
+#profile figure:hover img {
+  filter: brightness(50%);
+}
+#profile #select {
+  font-family: "Poppins", sans-serif;
+  font-weight: 900;
+  font-style: italic;
+  color: white;
+  background-color: #333;
+  text-align: center;
+  width: 20rem;
+  margin-top: 10px;
+}
+#profile #tombol-profesi {
+  display: block;
+  margin: 0 auto;
+  padding: 0.5rem 2rem;
+  font-family: "Poppins", sans-serif;
+  font-weight: 900;
+  font-style: italic;
+  border: 0.2rem solid white;
+  border-radius: 1rem;
+  background-color: transparent;
+  color: white;
+  transition: 0.3s;
+}
+#profile #tombol-profesi:hover {
+  background-color: white;
+  color: black;
+}
+
+#profile-container {
+  font-family: "Poppins", sans-serif;
+  color: white;
+  position: fixed;
+  display: none;
+  width: 80%;
+  height: 75%;
+  padding: 1rem;
+  overflow-y: scroll;
+  margin: 0 auto;
+  background-color: #161515;
+  border-radius: 1rem;
+  border: 0.5rem double aqua;
+  text-align: justify;
+  z-index: 999;
+}
+#profile-container header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+#profile-container header h2 {
+  font-family: "Lobster", sans-serif;
+  color: white;
+  text-align: center;
+}
+#profile-container header img {
+  width: 15rem;
+  height: 12rem;
+  border-radius: 1rem;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+#profile-container header ul li {
+  list-style: disc;
+}
+#profile-container main button {
+  display: block;
+  margin: 0 auto;
+  padding: 0.5rem 2rem;
+  font-family: "Poppins", sans-serif;
+  font-weight: 900;
+  font-style: italic;
+  border: 0.2rem solid aqua;
+  border-radius: 1rem;
+  background-color: transparent;
+  color: white;
+  transition: 0.3s;
+}
+#profile-container main button:hover {
+  background-color: aqua;
+  color: black;
+}
+
+/* Chrome, Edge and Safari */
+#profile-container::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+
+#profile-container::-webkit-scrollbar-track {
+  border-radius: 20px;
+  background-color: #333333;
+}
+#profile-container::-webkit-scrollbar-track:hover {
+  background-color: #515151;
+}
+#profile-container::-webkit-scrollbar-track:active {
+  background-color: #060606;
+}
+
+#profile-container::-webkit-scrollbar-thumb {
+  border-radius: 18px;
+  background-color: #888888;
+}
+#profile-container::-webkit-scrollbar-thumb:hover, #profile-container::-webkit-scrollbar-thumb:active {
+  background-color: #62a34b;
+}
+
+#portfolio {
+  display: none;
+  height: 100vh;
+  background: linear-gradient(180deg, rgb(0, 0, 0) 0%, rgb(226, 54, 54));
+  padding: 7rem 1rem;
+  position: relative;
+}
+#portfolio h3 {
+  font-family: "Poppins", sans-serif;
+  color: white;
+  font-weight: 900;
+  font-style: italic;
+  text-align: center;
+}
+#portfolio h3 span {
+  color: #e4e433;
+}
+#portfolio .container-portfolio::-webkit-scrollbar {
+  width: 5px;
+  width: 5px;
+}
+#portfolio .container-portfolio::-webkit-scrollbar-track {
+  border-radius: 20px;
+  background-color: #fff;
+}
+#portfolio .container-portfolio::-webkit-scrollbar-track:hover {
+  background-color: #000;
+}
+#portfolio .container-portfolio::-webkit-scrollbar-track:active {
+  background-color: #fff;
+}
+#portfolio .container-portfolio::-webkit-scrollbar-thumb {
+  background-color: #888888;
+}
+#portfolio .container-portfolio::-webkit-scrollbar-thumb:hover {
+  background-color: #62a34b;
+}
+#portfolio .container-portfolio::-webkit-scrollbar-thumb:active {
+  background-color: #62a34b;
+}
+#portfolio .container-portfolio {
+  position: relative;
+  width: 75%;
+  height: 80%;
+  max-height: 320px;
+  border: 0.2rem solid white;
+  border-radius: 1rem 0.8rem 0;
+  display: block;
+  margin: 2rem auto;
+  padding: 2rem;
+  color: white;
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+#portfolio .container-portfolio .port-nav {
+  position: absolute;
+  height: 100vh;
+  max-height: 320px;
+  width: 20%;
+  background-color: black;
+  opacity: 0.3;
+  border-radius: 50% 50%;
+  transform: scale(2);
+  top: -50%;
+  transition: 0.3s;
+}
+#portfolio .container-portfolio #next-nav {
+  right: -27%;
+}
+#portfolio .container-portfolio #next-nav:hover {
+  transform: scaleX(3);
+}
+#portfolio .container-portfolio #prev-nav {
+  left: -27%;
+}
+#portfolio .container-portfolio #prev-nav:hover {
+  transform: scaleX(3);
+}
+#portfolio div[data-category=fe-intro] h2,
+#portfolio div[data-category=kp-intro] h2,
+#portfolio div[data-category=ve-intro] h2 {
+  font-weight: 900;
+  font-style: italic;
+  font-family: "Lobster", sans-serif;
+  color: white;
+  font-size: 2rem;
+  text-align: center;
+}
+#portfolio div[data-category=fe-intro] p,
+#portfolio div[data-category=kp-intro] p,
+#portfolio div[data-category=ve-intro] p {
+  font-family: "Poppins", sans-serif;
+  color: white;
+  text-align: justify;
+}
+#portfolio div[data-category=fe-kemahiran] h2,
+#portfolio div[data-category=kp-kemahiran] h2,
+#portfolio div[data-category=ve-kemahiran] h2 {
+  font-weight: 900;
+  font-style: italic;
+  font-family: "Lobster", sans-serif;
+  color: white;
+  font-size: 2rem;
+  text-align: center;
+}
+#portfolio div[data-category=fe-kemahiran] figure,
+#portfolio div[data-category=kp-kemahiran] figure,
+#portfolio div[data-category=ve-kemahiran] figure {
+  display: inline-block;
+  width: 12rem;
+  height: 12rem;
+  margin: 2rem 1rem;
+}
+#portfolio div[data-category=fe-kemahiran] figure img,
+#portfolio div[data-category=kp-kemahiran] figure img,
+#portfolio div[data-category=ve-kemahiran] figure img {
+  width: 12rem;
+  height: 12rem;
+  -o-object-fit: cover;
+     object-fit: cover;
+  filter: brightness(0) contrast(0);
+  transition: 0.5s;
+}
+#portfolio div[data-category=fe-kemahiran] figure img:hover,
+#portfolio div[data-category=kp-kemahiran] figure img:hover,
+#portfolio div[data-category=ve-kemahiran] figure img:hover {
+  filter: brightness(100%) contrast(100%);
+}
+#portfolio div[data-category=fe-kemahiran] figure img:hover + figcaption,
+#portfolio div[data-category=kp-kemahiran] figure img:hover + figcaption,
+#portfolio div[data-category=ve-kemahiran] figure img:hover + figcaption {
+  visibility: visible;
+  opacity: 1;
+  transform: translateY(0);
+}
+#portfolio div[data-category=fe-kemahiran] figure figcaption,
+#portfolio div[data-category=kp-kemahiran] figure figcaption,
+#portfolio div[data-category=ve-kemahiran] figure figcaption {
+  font-family: "Poppins", sans-serif;
+  color: white;
+  font-weight: bold;
+  font-size: 1.4rem;
+  text-align: center;
+  transform: translateY(-200%);
+  opacity: 0;
+  visibility: hidden;
+  transition: 0.5s;
+}
+#portfolio div[data-category=fe-pencapaian] h2,
+#portfolio div[data-category=kp-pencapaian] h2,
+#portfolio div[data-category=ve-pencapaian] h2 {
+  font-weight: 900;
+  font-style: italic;
+  font-family: "Lobster", sans-serif;
+  color: white;
+  font-size: 2rem;
+  text-align: center;
+}
+#portfolio div[data-category=fe-pencapaian] figure,
+#portfolio div[data-category=kp-pencapaian] figure,
+#portfolio div[data-category=ve-pencapaian] figure {
+  display: inline-block;
+  width: 12rem;
+  height: 12rem;
+  margin: 1rem;
+}
+#portfolio div[data-category=fe-pencapaian] figure img,
+#portfolio div[data-category=kp-pencapaian] figure img,
+#portfolio div[data-category=ve-pencapaian] figure img {
+  width: 12rem;
+  height: 12rem;
+  border-radius: 50%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  transition: 0.5s;
+}
+#portfolio div[data-category=fe-pencapaian] figure img:hover,
+#portfolio div[data-category=kp-pencapaian] figure img:hover,
+#portfolio div[data-category=ve-pencapaian] figure img:hover {
+  filter: brightness(20%);
+}
+#portfolio div[data-category=fe-pencapaian] figure img:hover + figcaption,
+#portfolio div[data-category=kp-pencapaian] figure img:hover + figcaption,
+#portfolio div[data-category=ve-pencapaian] figure img:hover + figcaption {
+  visibility: visible;
+  opacity: 1;
+  transform: translateY(0);
+}
+#portfolio div[data-category=fe-pencapaian] figure figcaption,
+#portfolio div[data-category=kp-pencapaian] figure figcaption,
+#portfolio div[data-category=ve-pencapaian] figure figcaption {
+  font-family: "Poppins", sans-serif;
+  color: white;
+  font-weight: bold;
+  font-size: 1.2rem;
+  text-align: center;
+  transform: translateY(-200%);
+  opacity: 0;
+  visibility: hidden;
+  transition: 0.5s;
+}
+#portfolio div[data-category=fe-pencapaian] figure figcaption:hover + img,
+#portfolio div[data-category=kp-pencapaian] figure figcaption:hover + img,
+#portfolio div[data-category=ve-pencapaian] figure figcaption:hover + img {
+  filter: brightness(20%);
+}
+#portfolio div[data-category=fe-pencapaian] figure img,
+#portfolio div[data-category=fe-pencapaian] figure figcaption,
+#portfolio div[data-category=kp-pencapaian] figure img,
+#portfolio div[data-category=kp-pencapaian] figure figcaption,
+#portfolio div[data-category=ve-pencapaian] figure img,
+#portfolio div[data-category=ve-pencapaian] figure figcaption {
+  cursor: pointer;
+}
+#portfolio div[data-category=fe-kreasi] h2,
+#portfolio div[data-category=kp-kreasi] h2,
+#portfolio div[data-category=ve-kreasi] h2 {
+  font-weight: 900;
+  font-style: italic;
+  font-family: "Lobster", sans-serif;
+  color: white;
+  font-size: 2rem;
+  text-align: center;
+}
+#portfolio div[data-category=fe-kreasi] .creativity-container,
+#portfolio div[data-category=kp-kreasi] .creativity-container,
+#portfolio div[data-category=ve-kreasi] .creativity-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
+#portfolio div[data-category=fe-kreasi] .creativity-container figure,
+#portfolio div[data-category=kp-kreasi] .creativity-container figure,
+#portfolio div[data-category=ve-kreasi] .creativity-container figure {
+  display: inline-block;
+  width: 12rem;
+  height: 12rem;
+}
+#portfolio div[data-category=fe-kreasi] .creativity-container figure img,
+#portfolio div[data-category=kp-kreasi] .creativity-container figure img,
+#portfolio div[data-category=ve-kreasi] .creativity-container figure img {
+  width: 12rem;
+  height: 12rem;
+  border-radius: 50%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  transition: 0.5s;
+}
+#portfolio div[data-category=fe-kreasi] .creativity-container figure img:hover,
+#portfolio div[data-category=kp-kreasi] .creativity-container figure img:hover,
+#portfolio div[data-category=ve-kreasi] .creativity-container figure img:hover {
+  filter: brightness(20%);
+}
+#portfolio div[data-category=fe-kreasi] .creativity-container figure img:hover + figcaption,
+#portfolio div[data-category=kp-kreasi] .creativity-container figure img:hover + figcaption,
+#portfolio div[data-category=ve-kreasi] .creativity-container figure img:hover + figcaption {
+  visibility: visible;
+  opacity: 1;
+  transform: translateY(0);
+}
+#portfolio div[data-category=fe-kreasi] .creativity-container figure figcaption,
+#portfolio div[data-category=kp-kreasi] .creativity-container figure figcaption,
+#portfolio div[data-category=ve-kreasi] .creativity-container figure figcaption {
+  font-family: "Poppins", sans-serif;
+  color: white;
+  font-weight: bold;
+  font-size: 1.2rem;
+  text-align: center;
+  transform: translateY(-200%);
+  opacity: 0;
+  visibility: hidden;
+  transition: 0.5s;
+}
+#portfolio div[data-category=fe-kreasi] .creativity-container figure figcaption:hover + img,
+#portfolio div[data-category=kp-kreasi] .creativity-container figure figcaption:hover + img,
+#portfolio div[data-category=ve-kreasi] .creativity-container figure figcaption:hover + img {
+  filter: brightness(20%);
+}
+#portfolio div[data-category=fe-kreasi] .creativity-container figure img,
+#portfolio div[data-category=fe-kreasi] .creativity-container figure figcaption,
+#portfolio div[data-category=kp-kreasi] .creativity-container figure img,
+#portfolio div[data-category=kp-kreasi] .creativity-container figure figcaption,
+#portfolio div[data-category=ve-kreasi] .creativity-container figure img,
+#portfolio div[data-category=ve-kreasi] .creativity-container figure figcaption {
+  cursor: pointer;
+}
+#portfolio div[data-category=fe-kreasi] .slide-prof,
+#portfolio div[data-category=kp-kreasi] .slide-prof,
+#portfolio div[data-category=ve-kreasi] .slide-prof {
+  position: absolute;
+  bottom: -15%;
+  font-size: 6rem;
+  cursor: pointer;
+}
+#portfolio div[data-category=fe-kreasi] #creativity-next,
+#portfolio div[data-category=fe-kreasi] #creativity-next-kp,
+#portfolio div[data-category=kp-kreasi] #creativity-next,
+#portfolio div[data-category=kp-kreasi] #creativity-next-kp,
+#portfolio div[data-category=ve-kreasi] #creativity-next,
+#portfolio div[data-category=ve-kreasi] #creativity-next-kp {
+  right: 0;
+}
+#portfolio div[data-category=fe-kreasi] #creativity-prev,
+#portfolio div[data-category=fe-kreasi] #creativity-prev-kp,
+#portfolio div[data-category=kp-kreasi] #creativity-prev,
+#portfolio div[data-category=kp-kreasi] #creativity-prev-kp,
+#portfolio div[data-category=ve-kreasi] #creativity-prev,
+#portfolio div[data-category=ve-kreasi] #creativity-prev-kp {
+  left: 0;
+}
+#portfolio div[data-category=kp-kemahiran] img,
+#portfolio div[data-category=ve-kemahiran] img {
+  border-radius: 50%;
+}
+
+.container-reward {
+  font-family: "Poppins", sans-serif;
+  color: white;
+  display: grid;
+  grid-template-areas: "image identity" "exp exp" "button button";
+  grid-template-columns: 1fr 1fr;
+  position: fixed;
+  background-color: #222;
+  margin: 0 auto;
+  top: 15%;
+  left: 10%;
+  width: 80%;
+  height: 80%;
+  border: 1rem double aqua;
+  padding: 1rem;
+  border-radius: 1rem;
+  text-align: center;
+  overflow-y: scroll;
+  z-index: 999;
+}
+.container-reward::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+.container-reward::-webkit-scrollbar-track {
+  border-radius: 20px;
+  background-color: #333333;
+}
+.container-reward::-webkit-scrollbar-track:hover {
+  background-color: #515151;
+}
+.container-reward::-webkit-scrollbar-track:active {
+  background-color: #060606;
+}
+.container-reward::-webkit-scrollbar-thumb {
+  border-radius: 18px;
+  background-color: #888888;
+}
+.container-reward::-webkit-scrollbar-thumb:hover, .container-reward::-webkit-scrollbar-thumb:active {
+  background-color: #62a34b;
+}
+.container-reward .img-container-reward {
+  grid-area: image;
+  width: 100%;
+  max-width: 505.094px;
+  max-height: 243.562px;
+  -o-object-fit: contain;
+     object-fit: contain;
+  border-radius: 1rem;
+}
+.container-reward .identity-container-reward {
+  grid-area: identity;
+  margin-left: 1rem;
+  margin-top: 1rem;
+}
+.container-reward .identity-container-reward a {
+  text-align: center;
+  text-decoration: none;
+}
+.container-reward .identity-container-reward a button {
+  display: block;
+  margin: 0 auto;
+  padding: 0.5rem 2rem;
+  font-family: "Poppins", sans-serif;
+  font-weight: 900;
+  font-style: none;
+  border: 0.2rem solid aqua;
+  border-radius: 1rem;
+  background-color: transparent;
+  color: white;
+  transition: 0.3s;
+}
+.container-reward .identity-container-reward a button:hover {
+  background-color: aqua;
+  color: black;
+}
+.container-reward .explain-container-reward {
+  grid-area: exp;
+  text-align: justify;
+}
+.container-reward .close-reward {
+  grid-area: button;
+  display: block;
+  margin: 0 auto;
+  padding: 0.5rem 2rem;
+  font-family: "Poppins", sans-serif;
+  font-weight: 900;
+  font-style: normal;
+  border: 0.2rem solid aqua;
+  border-radius: 1rem;
+  background-color: transparent;
+  color: white;
+  transition: 0.3s;
+}
+.container-reward .close-reward:hover {
+  background-color: aqua;
+  color: black;
+}
+
+.container-creativity .container-reward {
+  font-family: "Poppins", sans-serif;
+  color: white;
+  display: grid;
+  grid-template-areas: "image identity" "exp exp" "button button";
+  grid-template-columns: 1fr 1fr;
+  position: fixed;
+  background-color: #222;
+  margin: 0 auto;
+  top: 10%;
+  left: 10%;
+  width: 80%;
+  height: 80%;
+  border: 1rem double aqua;
+  padding: 1rem;
+  border-radius: 1rem;
+  text-align: center;
+  overflow-y: scroll;
+}
+.container-creativity .container-reward::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+.container-creativity .container-reward::-webkit-scrollbar-track {
+  border-radius: 20px;
+  background-color: #333333;
+}
+.container-creativity .container-reward::-webkit-scrollbar-track:hover {
+  background-color: #515151;
+}
+.container-creativity .container-reward::-webkit-scrollbar-track:active {
+  background-color: #060606;
+}
+.container-creativity .container-reward::-webkit-scrollbar-thumb {
+  border-radius: 18px;
+  background-color: #888888;
+}
+.container-creativity .container-reward::-webkit-scrollbar-thumb:hover, .container-creativity .container-reward::-webkit-scrollbar-thumb:active {
+  background-color: #62a34b;
+}
+.container-creativity .container-reward .img-container-creativity {
+  grid-area: image;
+  width: 100%;
+  border-radius: 1rem;
+}
+.container-creativity .container-reward .identity-container-creativity {
+  grid-area: identity;
+  margin-left: 1rem;
+  margin-top: 1rem;
+}
+.container-creativity .container-reward .identity-container-creativity a {
+  text-align: center;
+  text-decoration: none;
+}
+.container-creativity .container-reward .identity-container-creativity a button {
+  display: block;
+  margin: 0 auto;
+  padding: 0.5rem 2rem;
+  font-family: "Poppins", sans-serif;
+  font-weight: 900;
+  font-style: none;
+  border: 0.2rem solid aqua;
+  border-radius: 1rem;
+  background-color: transparent;
+  color: white;
+  transition: 0.3s;
+}
+.container-creativity .container-reward .identity-container-creativity a button:hover {
+  background-color: aqua;
+  color: black;
+}
+.container-creativity .container-reward .explain-container-creativity {
+  grid-area: exp;
+  text-align: justify;
+}
+.container-creativity .container-reward .close-creativity {
+  grid-area: button;
+  display: block;
+  margin: 0 auto;
+  padding: 0.5rem 2rem;
+  font-family: "Poppins", sans-serif;
+  font-weight: 900;
+  font-style: normal;
+  border: 0.2rem solid aqua;
+  border-radius: 1rem;
+  background-color: transparent;
+  color: white;
+  transition: 0.3s;
+}
+.container-creativity .container-reward .close-creativity:hover {
+  background-color: aqua;
+  color: black;
+}
+
+#creat-port-fe {
+  width: 100%;
+}
+
+@media (max-width: 576px) {
+  div[data-category=fe-kemahiran] figure,
+  div[data-category=kp-kemahiran] figure {
+    display: block !important;
+    margin: 2.5rem auto !important;
+  }
+  .creativity-container {
+    flex-direction: column !important;
+  }
+  .slide-prof {
+    display: none !important;
+  }
+}
+#contact {
+  padding: 5rem;
+  background: url("../img/bg-contact.jpg");
+  background-position: center;
+  background-attachment: scroll;
+  background-size: cover;
+  height: 100vh;
+  text-align: center;
+}
+#contact h1,
+#contact h2 {
+  font-family: "Lobster", sans-serif;
+  color: white;
+  text-shadow: 2px 2px #000;
+}
+#contact .container-sosmed {
+  display: flex;
+  flex-direction: row;
+  float: left;
+  padding: 0 2rem;
+  margin-top: 3rem;
+  width: 100%;
+  justify-content: space-evenly;
+}
+#contact .container-sosmed .btn-12 {
+  font-family: "Poppins", sans-serif;
+  color: white;
+  background: none;
+  position: relative;
+  right: 20px;
+  bottom: 20px;
+  border: none;
+  box-shadow: none;
+  width: 130px;
+  height: 40px;
+  line-height: 42px;
+  perspective: 230px;
+}
+#contact .container-sosmed .btn-12 span {
+  background: rgb(0, 172, 238);
+  background: linear-gradient(0deg, rgb(0, 172, 238) 0%, rgb(2, 126, 251) 100%);
+  display: block;
+  position: absolute;
+  width: 130px;
+  height: 40px;
+  box-shadow: inset 2px 2px 2px 0px rgba(255, 255, 255, 0.5), 7px 7px 20px 0px rgba(0, 0, 0, 0.1), 4px 4px 5px 0px rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+  margin: 0;
+  text-align: center;
+  box-sizing: border-box;
+  transition: all 0.3s;
+}
+#contact .container-sosmed .btn-12 span:nth-child(1) {
+  box-shadow: -7px -7px 20px 0px rgba(255, 255, 255, 0.6), -4px -4px 5px 0px rgba(255, 255, 255, 0.6), 7px 7px 20px 0px rgba(0, 0, 0, 0.1333333333), 4px 4px 5px 0px rgba(0, 0, 0, 0.0666666667);
+  transform: rotateX(90deg);
+  transform-origin: 50% 50% -20px;
+}
+#contact .container-sosmed .btn-12 span:nth-child(2) {
+  transform: rotateX(0deg);
+  transform-origin: 50% 50% -20px;
+}
+#contact .container-sosmed .btn-12:hover span:nth-child(1) {
+  box-shadow: inset 2px 2px 2px 0px rgba(255, 255, 255, 0.5), 7px 7px 20px 0px rgba(0, 0, 0, 0.1), 4px 4px 5px 0px rgba(0, 0, 0, 0.1);
+  transform: rotateX(0deg);
+}
+#contact .container-sosmed .btn-12:hover span:nth-child(2) {
+  box-shadow: inset 2px 2px 2px 0px rgba(255, 255, 255, 0.5), 7px 7px 20px 0px rgba(0, 0, 0, 0.1), 4px 4px 5px 0px rgba(0, 0, 0, 0.1);
+  color: transparent;
+  transform: rotateX(-90deg);
+}
+
+@media (max-width: 980px) {
+  .container-sosmed {
+    flex-direction: column !important;
+  }
+  .btn-12 {
+    margin-top: 1.5rem;
+  }
+}
+@media (max-width: 576px) {
+  .btn-12 {
+    margin-top: 3rem !important;
+  }
+}
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+@media (max-width: 768px) {
+  html {
+    font-size: 85%;
+  }
+  #profile {
+    max-height: 625px;
+  }
+  .menu-mobile {
+    display: block !important;
+  }
+  .content {
+    position: absolute;
+    background-color: #333;
+    height: 100vh;
+    text-align: center;
+    top: 100%;
+    right: -100%;
+    opacity: 0;
+    transition: 0.5s;
+    z-index: 999;
+  }
+  .content ul {
+    flex-direction: column !important;
+  }
+  .content-active {
+    opacity: 1 !important;
+    right: 0 !important;
+  }
+  .menu-mobile-active {
+    background-color: #161515;
+  }
+  .container-portfolio {
+    max-height: 200px !important;
+  }
+  .reward-container .img-skill figcaption {
+    font-size: 0.8rem !important;
+    left: 0;
+  }
+}
+@media (max-width: 576px) {
+  html {
+    font-size: 75%;
+  }
+  #profile-container header {
+    flex-direction: column;
+  }
+  #profile-container header img {
+    display: block;
+    margin: 1rem auto;
+  }
+  #profile-container header .container-portfolio {
+    max-height: 150px !important;
+  }
+  .container-portfolio {
+    max-height: initial !important;
+  }
+  #main-image {
+    width: 18rem !important;
+    height: 18rem !important;
+  }
+  div[data-category=fe-kemahiran] {
+    text-align: center;
+    width: 90%;
+  }
+  div[data-category=fe-kemahiran] .slide-img-container,
+  div[data-category=fe-kemahiran] .slide-prof {
+    display: none;
+  }
+  div[data-category=fe-kemahiran] .mobile-skills {
+    display: flex !important;
+    width: inherit;
+    padding: 2.5rem 0;
+    overflow-y: hidden !important;
+    overflow-x: scroll !important;
+  }
+  div[data-category=fe-kemahiran] .mobile-skills::-webkit-scrollbar {
+    display: none;
+  }
+  div[data-category=fe-kemahiran] .mobile-skills figure {
+    display: inline-block;
+    width: 5rem;
+    height: 5rem;
+    margin: 0 2rem !important;
+  }
+  div[data-category=fe-kemahiran] .mobile-skills figure img {
+    width: 7rem !important;
+    height: 7rem !important;
+    border-radius: 1rem;
+    -o-object-fit: cover;
+       object-fit: cover;
+  }
+  div[data-category=fe-kemahiran] .mobile-skills figure figcaption {
+    display: none;
+  }
+  div[data-category=fe-pencapaian] figure {
+    display: block !important;
+    margin: 2rem auto !important;
+  }
+  div[data-category=fe-kreasi] .creativity-container {
+    display: block !important;
+  }
+  div[data-category=fe-kreasi] figure {
+    margin: 2rem auto !important;
+  }
+  div[data-category=fe-kreasi] .slide-prof {
+    display: none;
+  }
+  .img-skill {
+    display: block !important;
+    margin: 2.5rem auto !important;
+  }
+}/*# sourceMappingURL=main.css.map */

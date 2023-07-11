@@ -1,0 +1,509 @@
+@import "mixins";
+
+// ************************
+// PORTOFOLIO SECTION START
+// ************************
+
+#portfolio {
+  display: none;
+  height: 100vh;
+  background: linear-gradient(180deg, rgba(0, 0, 0, 1) 0%, rgba(226, 54, 54));
+  padding: 7rem 1rem;
+  position: relative;
+
+  h3 {
+    @include content-font();
+    @include format-judul(900, italic);
+    text-align: center;
+
+    span {
+      color: #e4e433;
+    }
+  }
+
+  .container-portfolio::-webkit-scrollbar {
+    width: 5px;
+    width: 5px;
+  }
+
+  .container-portfolio::-webkit-scrollbar-track {
+    border-radius: 20px;
+    background-color: #fff;
+
+    &:hover {
+      background-color: #000;
+    }
+
+    &:active {
+      background-color: #fff;
+    }
+  }
+
+  .container-portfolio::-webkit-scrollbar-thumb {
+    background-color: #888888;
+    &:hover {
+      background-color: #62a34b;
+    }
+
+    &:active {
+      background-color: #62a34b;
+    }
+  }
+
+  .container-portfolio {
+    position: relative;
+    width: 75%;
+    height: 80%;
+    max-height: 320px;
+    border: 0.2rem solid white;
+    border-radius: 1rem 0.8rem 0;
+    display: block;
+    margin: 2rem auto;
+    padding: 2rem;
+    color: white;
+    overflow-y: scroll;
+    overflow-x: hidden;
+
+    .port-nav {
+      position: absolute;
+      height: 100vh;
+      max-height: 320px;
+      width: 20%;
+      background-color: black;
+      opacity: 0.3;
+      border-radius: 50% 50%;
+      transform: scale(2);
+      top: -50%;
+      transition: 0.3s;
+    }
+
+    #next-nav {
+      right: -27%;
+    }
+
+    #next-nav:hover {
+      transform: scaleX(3);
+    }
+
+    #prev-nav {
+      left: -27%;
+    }
+
+    #prev-nav:hover {
+      transform: scaleX(3);
+    }
+  }
+  // *****************
+  // FRONT END SECTION
+  // *****************
+
+  div[data-category="fe-intro"],
+  div[data-category="kp-intro"],
+  div[data-category="ve-intro"] {
+    h2 {
+      @include format-judul(900, italic);
+      @include content-font("Lobster", white);
+      font-size: 2rem;
+      text-align: center;
+    }
+    p {
+      @include content-font("Poppins");
+      text-align: justify;
+    }
+  }
+
+  div[data-category="fe-kemahiran"],
+  div[data-category="kp-kemahiran"],
+  div[data-category="ve-kemahiran"] {
+    h2 {
+      @include format-judul(900, italic);
+      @include content-font("Lobster", white);
+      font-size: 2rem;
+      text-align: center;
+    }
+
+    figure {
+      display: inline-block;
+      width: 12rem;
+      height: 12rem;
+      margin: 2rem 1rem;
+
+      img {
+        width: 12rem;
+        height: 12rem;
+        object-fit: cover;
+        filter: brightness(0) contrast(0);
+        transition: 0.5s;
+        &:hover {
+          filter: brightness(100%) contrast(100%);
+        }
+      }
+
+      img:hover + figcaption {
+        visibility: visible;
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      figcaption {
+        @include content-font("Poppins", white);
+        font-weight: bold;
+        font-size: 1.4rem;
+        text-align: center;
+        transform: translateY(-200%);
+        opacity: 0;
+        visibility: hidden;
+        transition: 0.5s;
+      }
+    }
+  }
+
+  div[data-category="fe-pencapaian"],
+  div[data-category="kp-pencapaian"],
+  div[data-category="ve-pencapaian"] {
+    h2 {
+      @include format-judul(900, italic);
+      @include content-font("Lobster", white);
+      font-size: 2rem;
+      text-align: center;
+    }
+    figure {
+      display: inline-block;
+      width: 12rem;
+      height: 12rem;
+      margin: 1rem;
+
+      img {
+        width: 12rem;
+        height: 12rem;
+        border-radius: 50%;
+        object-fit: cover;
+        transition: 0.5s;
+        &:hover {
+          filter: brightness(20%);
+        }
+      }
+
+      img:hover + figcaption {
+        visibility: visible;
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      figcaption {
+        @include content-font("Poppins", white);
+        font-weight: bold;
+        font-size: 1.2rem;
+        text-align: center;
+        transform: translateY(-200%);
+        opacity: 0;
+        visibility: hidden;
+        transition: 0.5s;
+      }
+
+      figcaption:hover + img {
+        filter: brightness(20%);
+      }
+
+      img,
+      figcaption {
+        cursor: pointer;
+      }
+    }
+  }
+
+  div[data-category="fe-kreasi"],
+  div[data-category="kp-kreasi"],
+  div[data-category="ve-kreasi"] {
+    h2 {
+      @include format-judul(900, italic);
+      @include content-font("Lobster", white);
+      font-size: 2rem;
+      text-align: center;
+    }
+
+    .creativity-container {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-evenly;
+
+      figure {
+        display: inline-block;
+        width: 12rem;
+        height: 12rem;
+
+        img {
+          width: 12rem;
+          height: 12rem;
+          border-radius: 50%;
+          object-fit: cover;
+          transition: 0.5s;
+          &:hover {
+            filter: brightness(20%);
+          }
+        }
+
+        img:hover + figcaption {
+          visibility: visible;
+          opacity: 1;
+          transform: translateY(0);
+        }
+
+        figcaption {
+          @include content-font("Poppins", white);
+          font-weight: bold;
+          font-size: 1.2rem;
+          text-align: center;
+          transform: translateY(-200%);
+          opacity: 0;
+          visibility: hidden;
+          transition: 0.5s;
+        }
+
+        figcaption:hover + img {
+          filter: brightness(20%);
+        }
+
+        img,
+        figcaption {
+          cursor: pointer;
+        }
+      }
+    }
+
+    .slide-prof {
+      position: absolute;
+      bottom: -15%;
+      font-size: 6rem;
+      cursor: pointer;
+    }
+
+    #creativity-next,
+    #creativity-next-kp {
+      right: 0;
+    }
+    #creativity-prev,
+    #creativity-prev-kp {
+      left: 0;
+    }
+  }
+
+  // *******************
+  // KEPENULISAN SECTION
+  // *******************
+  div[data-category="kp-kemahiran"],
+  div[data-category="ve-kemahiran"] {
+    img {
+      border-radius: 50%;
+    }
+  }
+}
+
+.container-reward {
+  @include content-font();
+  display: grid;
+  grid-template-areas:
+    "image identity"
+    "exp exp"
+    "button button";
+  grid-template-columns: 1fr 1fr;
+  position: fixed;
+  background-color: #222;
+  margin: 0 auto;
+  top: 15%;
+  left: 10%;
+  width: 80%;
+  height: 80%;
+  border: 1rem double aqua;
+  padding: 1rem;
+  border-radius: 1rem;
+  text-align: center;
+  overflow-y: scroll;
+  z-index: 999;
+
+  &::-webkit-scrollbar {
+    width: 5px;
+    height: 5px;
+  }
+
+  &::-webkit-scrollbar-track {
+    border-radius: 20px;
+    background-color: #333333;
+
+    &:hover {
+      background-color: #515151;
+    }
+    &:active {
+      background-color: #060606;
+    }
+  }
+
+  &::-webkit-scrollbar-thumb {
+    border-radius: 18px;
+    background-color: #888888;
+
+    &:hover,
+    &:active {
+      background-color: #62a34b;
+    }
+  }
+
+  .img-container-reward {
+    grid-area: image;
+    width: 100%;
+    max-width: 505.094px;
+    max-height: 243.562px;
+    object-fit: contain;
+    border-radius: 1rem;
+  }
+
+  .identity-container-reward {
+    grid-area: identity;
+    margin-left: 1rem;
+    margin-top: 1rem;
+
+    a {
+      text-align: center;
+      text-decoration: none;
+      button {
+        @include button-style(aqua, none);
+
+        &:hover {
+          background-color: aqua;
+          color: black;
+        }
+      }
+    }
+  }
+
+  .explain-container-reward {
+    grid-area: exp;
+    text-align: justify;
+  }
+
+  .close-reward {
+    grid-area: button;
+    @include button-style(aqua, normal);
+
+    &:hover {
+      background-color: aqua;
+      color: black;
+    }
+  }
+}
+
+.container-creativity {
+  .container-reward {
+    @include content-font();
+    display: grid;
+    grid-template-areas:
+      "image identity"
+      "exp exp"
+      "button button";
+    grid-template-columns: 1fr 1fr;
+    position: fixed;
+    background-color: #222;
+    margin: 0 auto;
+    top: 10%;
+    left: 10%;
+    width: 80%;
+    height: 80%;
+    border: 1rem double aqua;
+    padding: 1rem;
+    border-radius: 1rem;
+    text-align: center;
+    overflow-y: scroll;
+
+    &::-webkit-scrollbar {
+      width: 5px;
+      height: 5px;
+    }
+
+    &::-webkit-scrollbar-track {
+      border-radius: 20px;
+      background-color: #333333;
+
+      &:hover {
+        background-color: #515151;
+      }
+      &:active {
+        background-color: #060606;
+      }
+    }
+
+    &::-webkit-scrollbar-thumb {
+      border-radius: 18px;
+      background-color: #888888;
+
+      &:hover,
+      &:active {
+        background-color: #62a34b;
+      }
+    }
+
+    .img-container-creativity {
+      grid-area: image;
+      width: 100%;
+      border-radius: 1rem;
+    }
+
+    .identity-container-creativity {
+      grid-area: identity;
+      margin-left: 1rem;
+      margin-top: 1rem;
+
+      a {
+        text-align: center;
+        text-decoration: none;
+        button {
+          @include button-style(aqua, none);
+
+          &:hover {
+            background-color: aqua;
+            color: black;
+          }
+        }
+      }
+    }
+
+    .explain-container-creativity {
+      grid-area: exp;
+      text-align: justify;
+    }
+
+    .close-creativity {
+      grid-area: button;
+      @include button-style(aqua, normal);
+
+      &:hover {
+        background-color: aqua;
+        color: black;
+      }
+    }
+  }
+}
+
+#creat-port-fe {
+  width: 100%;
+}
+
+// ************************
+// PORTOFOLIO SECTION END
+// ************************
+
+@media (max-width: 576px) {
+  div[data-category="fe-kemahiran"],
+  div[data-category="kp-kemahiran"] {
+    figure {
+      display: block !important;
+      margin: 2.5rem auto !important;
+    }
+  }
+
+  .creativity-container {
+    flex-direction: column !important;
+  }
+  .slide-prof {
+    display: none !important;
+  }
+}

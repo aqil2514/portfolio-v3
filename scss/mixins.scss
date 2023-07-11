@@ -1,0 +1,37 @@
+// *********************
+// ******ALL MIXINS*****
+// *********************
+
+@mixin justify($-tipejustify) {
+  display: flex;
+  flex-direction: row;
+  justify-content: $-tipejustify;
+}
+
+@mixin content-font($-jenisfont: "Poppins", $-warnatulisan: white) {
+  font-family: $-jenisfont, sans-serif;
+  color: $-warnatulisan;
+}
+
+@mixin format-judul($-tebalTulisan: 900, $-fontStyle: normal) {
+  font-weight: $-tebalTulisan;
+  font-style: $-fontStyle;
+}
+
+@mixin button-style($-warnaBorder, $-fontStyle: italic) {
+  display: block;
+  margin: 0 auto;
+  padding: 0.5rem 2rem;
+  font-family: "Poppins", sans-serif;
+  font-weight: 900;
+  font-style: $-fontStyle;
+  border: 0.2rem solid $-warnaBorder;
+  border-radius: 1rem;
+  background-color: transparent;
+  color: white;
+  transition: 0.3s;
+}
+
+// *********************
+// ******ALL MIXINS*****
+// *********************

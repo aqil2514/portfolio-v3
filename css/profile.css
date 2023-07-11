@@ -1,0 +1,154 @@
+#profile {
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0.5), rgb(0, 0, 0)), url("../img/me.jpg");
+  height: 100vh;
+  background-position: center;
+  background-size: cover;
+  background-attachment: scroll;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+#profile figure {
+  position: relative;
+}
+#profile figure img {
+  width: 300px;
+  height: 300px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: 0.3s;
+}
+#profile figure img:hover {
+  filter: brightness(50%);
+}
+#profile figure figcaption {
+  position: absolute;
+  color: white;
+  font-family: "Poppins", sans-serif;
+  font-size: 1.5rem;
+  top: 45%;
+  left: 30%;
+  font-weight: 900;
+  font-style: italic;
+  cursor: pointer;
+  visibility: hidden;
+  opacity: 0;
+  transition: 0.3s;
+}
+#profile figure:hover figcaption {
+  visibility: visible;
+  opacity: 1;
+}
+#profile figure:hover img {
+  filter: brightness(50%);
+}
+#profile #select {
+  font-family: "Poppins", sans-serif;
+  font-weight: 900;
+  font-style: italic;
+  color: white;
+  background-color: #333;
+  text-align: center;
+  width: 20rem;
+  margin-top: 10px;
+}
+#profile #tombol-profesi {
+  display: block;
+  margin: 0 auto;
+  padding: 0.5rem 2rem;
+  font-family: "Poppins", sans-serif;
+  font-weight: 900;
+  font-style: italic;
+  border: 0.2rem solid white;
+  border-radius: 1rem;
+  background-color: transparent;
+  color: white;
+  transition: 0.3s;
+}
+#profile #tombol-profesi:hover {
+  background-color: white;
+  color: black;
+}
+
+#profile-container {
+  font-family: "Poppins", sans-serif;
+  color: white;
+  position: fixed;
+  display: none;
+  width: 80%;
+  height: 75%;
+  padding: 1rem;
+  overflow-y: scroll;
+  margin: 0 auto;
+  background-color: #161515;
+  border-radius: 1rem;
+  border: 0.5rem double aqua;
+  text-align: justify;
+  z-index: 999;
+}
+#profile-container header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+#profile-container header h2 {
+  font-family: "Lobster", sans-serif;
+  color: white;
+  text-align: center;
+}
+#profile-container header img {
+  width: 15rem;
+  height: 12rem;
+  border-radius: 1rem;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+#profile-container header ul li {
+  list-style: disc;
+}
+#profile-container main button {
+  display: block;
+  margin: 0 auto;
+  padding: 0.5rem 2rem;
+  font-family: "Poppins", sans-serif;
+  font-weight: 900;
+  font-style: italic;
+  border: 0.2rem solid aqua;
+  border-radius: 1rem;
+  background-color: transparent;
+  color: white;
+  transition: 0.3s;
+}
+#profile-container main button:hover {
+  background-color: aqua;
+  color: black;
+}
+
+/* Chrome, Edge and Safari */
+#profile-container::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+
+#profile-container::-webkit-scrollbar-track {
+  border-radius: 20px;
+  background-color: #333333;
+}
+#profile-container::-webkit-scrollbar-track:hover {
+  background-color: #515151;
+}
+#profile-container::-webkit-scrollbar-track:active {
+  background-color: #060606;
+}
+
+#profile-container::-webkit-scrollbar-thumb {
+  border-radius: 18px;
+  background-color: #888888;
+}
+#profile-container::-webkit-scrollbar-thumb:hover, #profile-container::-webkit-scrollbar-thumb:active {
+  background-color: #62a34b;
+}/*# sourceMappingURL=profile.css.map */

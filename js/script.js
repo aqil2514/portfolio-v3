@@ -274,7 +274,7 @@ $(document).ready(function () {
         $(".creativity-container .img-skill").on("click", function () {
           for (let i = 0; i < skilTrigFEK.length; i++) {
             if ($(this).attr("data-creative") == $(skilTrigFEK[i]).attr("id")) {
-              $(skilTrigFEK[i]).slideToggle();
+              $(skilTrigFEK[i]).slideDown();
             }
           }
         });
@@ -316,7 +316,7 @@ $(document).ready(function () {
         });
 
         $(".close-reward").click(function () {
-          $(this).parent().slideToggle();
+          $(this).parent().slideUp();
         });
       });
     });

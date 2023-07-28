@@ -66,32 +66,54 @@
 
     .port-nav {
       position: absolute;
-      height: 100vh;
-      max-height: 320px;
-      width: 20%;
-      background-color: black;
-      opacity: 0.3;
-      border-radius: 50% 50%;
-      transform: scale(2);
-      top: -50%;
-      transition: 0.3s;
+      top: -10%;
+
+      p[data-nav] {
+        color: white;
+        font-size: 5rem;
+
+        &:hover {
+          cursor: pointer;
+        }
+      }
     }
 
-    #next-nav {
-      right: -27%;
+    .next-nav {
+      right: 0;
     }
 
-    #next-nav:hover {
-      transform: scaleX(3);
+    .prev-nav {
+      left: 0;
     }
 
-    #prev-nav {
-      left: -27%;
-    }
+    // .port-nav {
+    //   position: absolute;
+    //   height: 100vh;
+    //   max-height: 320px;
+    //   width: 20%;
+    //   background-color: black;
+    //   opacity: 0.3;
+    //   border-radius: 50% 50%;
+    //   transform: scale(2);
+    //   top: -50%;
+    //   transition: 0.3s;
+    // }
 
-    #prev-nav:hover {
-      transform: scaleX(3);
-    }
+    // #next-nav {
+    //   right: -27%;
+    // }
+
+    // #next-nav:hover {
+    //   transform: scaleX(3);
+    // }
+
+    // #prev-nav {
+    //   left: -27%;
+    // }
+
+    // #prev-nav:hover {
+    //   transform: scaleX(3);
+    // }
   }
   // *****************
   // FRONT END SECTION

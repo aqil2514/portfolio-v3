@@ -1,3 +1,5 @@
+alert("Masih ada beberapa bug yang belum diperbaiki");
+
 $(document).ready(function () {
   let slidePort = 1;
   // NAVBAR SECTION

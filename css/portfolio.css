@@ -54,27 +54,20 @@
 }
 #portfolio .container-portfolio .port-nav {
   position: absolute;
-  height: 100vh;
-  max-height: 320px;
-  width: 20%;
-  background-color: black;
-  opacity: 0.3;
-  border-radius: 50% 50%;
-  transform: scale(2);
-  top: -50%;
-  transition: 0.3s;
+  top: -10%;
 }
-#portfolio .container-portfolio #next-nav {
-  right: -27%;
+#portfolio .container-portfolio .port-nav p[data-nav] {
+  color: white;
+  font-size: 5rem;
 }
-#portfolio .container-portfolio #next-nav:hover {
-  transform: scaleX(3);
+#portfolio .container-portfolio .port-nav p[data-nav]:hover {
+  cursor: pointer;
 }
-#portfolio .container-portfolio #prev-nav {
-  left: -27%;
+#portfolio .container-portfolio .next-nav {
+  right: 0;
 }
-#portfolio .container-portfolio #prev-nav:hover {
-  transform: scaleX(3);
+#portfolio .container-portfolio .prev-nav {
+  left: 0;
 }
 #portfolio div[data-category=fe-intro] h2,
 #portfolio div[data-category=kp-intro] h2,

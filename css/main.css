@@ -741,6 +741,9 @@
   .slide-prof {
     display: none !important;
   }
+  .port-nav {
+    top: 0 !important;
+  }
 }
 #contact {
   padding: 5rem;
@@ -812,6 +815,7 @@
   color: transparent;
   transform: rotateX(-90deg);
 }
+
 @media (max-width: 980px) {
   .container-sosmed {
     flex-direction: column !important;

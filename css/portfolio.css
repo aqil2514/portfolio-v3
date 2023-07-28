@@ -515,4 +515,7 @@
   .slide-prof {
     display: none !important;
   }
+  .port-nav {
+    top: 0 !important;
+  }
 }/*# sourceMappingURL=portfolio.css.map */

@@ -744,6 +744,9 @@
   .port-nav {
     top: 0 !important;
   }
+  .close-reward {
+    padding: 0 2rem !important;
+  }
 }
 #contact {
   padding: 5rem;

@@ -252,7 +252,7 @@ $(document).ready(function () {
           console.log(skilTrigFEP);
           for (let i = 0; i < skilTrigFEP.length; i++) {
             if ($(this).attr("data-reward") == $(skilTrigFEP[i]).attr("id")) {
-              $(skilTrigFEP[i]).slideToggle();
+              $(skilTrigFEP[i]).slideDown();
             }
           }
         });

@@ -227,7 +227,7 @@
 #portfolio {
   display: none;
   height: 100vh;
-  background: linear-gradient(180deg, rgb(0, 0, 0) 0%, rgb(226, 54, 54));
+  background: linear-gradient(180deg, rgb(0, 0, 0) 0%, rgb(226, 54, 54) 30%, rgb(0, 0, 0) 90%);
   padding: 7rem 1rem;
   position: relative;
 }
@@ -750,7 +750,7 @@
 }
 #contact {
   padding: 5rem;
-  background: url("../img/bg-contact.jpg");
+  background: linear-gradient(180deg, rgb(0, 0, 0) 10%, rgba(206, 61, 4, 0.2)), url("../img/bg-contact.jpg");
   background-position: center;
   background-attachment: scroll;
   background-size: cover;

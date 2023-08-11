@@ -221,9 +221,6 @@ $(document).ready(function () {
       const currentPort = siblingsIndex[imgSkilSlide - 1];
       const activePort = $(currentPort).attr("data-slide-img");
 
-      console.log(currentPort);
-      console.log(activePort);
-
       if (imgSkilSlide == activePort) {
         $(siblingsIndex).each(function () {
           if ($(this).attr("data-slide-img") !== activePort) {
@@ -248,8 +245,6 @@ $(document).ready(function () {
         const skilTrigFEP = $(".container-reward");
 
         imgSkillFEP.on("click", function () {
-          console.log(this);
-          console.log(skilTrigFEP);
           for (let i = 0; i < skilTrigFEP.length; i++) {
             if ($(this).attr("data-reward") == $(skilTrigFEP[i]).attr("id")) {
               $(skilTrigFEP[i]).slideDown();
@@ -284,7 +279,7 @@ $(document).ready(function () {
           cFPoint += 3;
           cLimit += 3;
 
-          if (cSlide > Math.ceil(cChildren.length / 3)) {
+          if (cSlide > Math.floor(cChildren.length / 3 - 1)) {
             cSlide = 1;
             cFPoint = 0;
             cLimit = 3;
@@ -303,7 +298,7 @@ $(document).ready(function () {
           cLimit -= 3;
 
           if (cSlide < 1) {
-            cSlide = Math.ceil(cChildren.length / 3);
+            cSlide = Math.floor(cChildren.length / 3 - 1);
             cFPoint = (cSlide - 1) * 3;
             cLimit = cSlide * 3;
           }
@@ -360,7 +355,6 @@ $(document).ready(function () {
         let sectionkp = cChildrenkp.slice(cFPointkp, cLimitkp);
 
         $(".cckp .img-skill").on("click", function () {
-          console.log(sectionkp);
           for (let i = 0; i < skilTrigKPK.length; i++) {
             if ($(this).attr("data-creative") == $(skilTrigKPK[i]).attr("id")) {
               $(skilTrigKPK[i]).slideDown();
@@ -381,9 +375,6 @@ $(document).ready(function () {
 
           const prevSectionkp = sectionkp;
           sectionkp = cChildrenkp.slice(cFPointkp, cLimitkp);
-
-          console.log(prevSectionkp);
-          console.log(sectionkp);
 
           prevSectionkp.hide();
           sectionkp.show();
@@ -435,7 +426,6 @@ $(document).ready(function () {
         let sectionve = cChildrenve.slice(cFPointve, cLimitve);
 
         $(".ccve .img-skill").on("click", function () {
-          console.log(sectionve);
           for (let i = 0; i < skilTrigVEK.length; i++) {
             if ($(this).attr("data-creative") == $(skilTrigVEK[i]).attr("id")) {
               $(skilTrigVEK[i]).slideDown();
@@ -456,9 +446,6 @@ $(document).ready(function () {
 
           const prevSectionve = sectionve;
           sectionve = cChildrenve.slice(cFPointve, cLimitve);
-
-          console.log(prevSectionve);
-          console.log(sectionve);
 
           prevSectionve.hide();
           sectionve.show();

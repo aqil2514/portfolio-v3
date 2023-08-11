@@ -1,7 +1,7 @@
 #portfolio {
   display: none;
   height: 100vh;
-  background: linear-gradient(180deg, rgb(0, 0, 0) 0%, rgb(226, 54, 54));
+  background: linear-gradient(180deg, rgb(0, 0, 0) 0%, rgb(226, 54, 54) 30%, rgb(0, 0, 0) 90%);
   padding: 7rem 1rem;
   position: relative;
 }

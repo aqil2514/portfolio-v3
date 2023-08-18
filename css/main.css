@@ -763,7 +763,11 @@
   color: white;
   text-shadow: 2px 2px #000;
 }
-#contact .container-sosmed {
+#contact #container-sosmed {
+  display: block;
+  height: 10rem;
+}
+#contact #container-sosmed .container-sosmed {
   display: flex;
   flex-direction: row;
   float: left;
@@ -772,7 +776,7 @@
   width: 100%;
   justify-content: space-evenly;
 }
-#contact .container-sosmed .btn-12 {
+#contact #container-sosmed .container-sosmed .btn-12 {
   font-family: "Poppins", sans-serif;
   color: white;
   background: none;
@@ -786,7 +790,7 @@
   line-height: 42px;
   perspective: 230px;
 }
-#contact .container-sosmed .btn-12 span {
+#contact #container-sosmed .container-sosmed .btn-12 span {
   background: rgb(0, 172, 238);
   background: linear-gradient(0deg, rgb(0, 172, 238) 0%, rgb(2, 126, 251) 100%);
   display: block;
@@ -800,34 +804,89 @@
   box-sizing: border-box;
   transition: all 0.3s;
 }
-#contact .container-sosmed .btn-12 span:nth-child(1) {
+#contact #container-sosmed .container-sosmed .btn-12 span:nth-child(1) {
   box-shadow: -7px -7px 20px 0px rgba(255, 255, 255, 0.6), -4px -4px 5px 0px rgba(255, 255, 255, 0.6), 7px 7px 20px 0px rgba(0, 0, 0, 0.1333333333), 4px 4px 5px 0px rgba(0, 0, 0, 0.0666666667);
   transform: rotateX(90deg);
   transform-origin: 50% 50% -20px;
 }
-#contact .container-sosmed .btn-12 span:nth-child(2) {
+#contact #container-sosmed .container-sosmed .btn-12 span:nth-child(2) {
   transform: rotateX(0deg);
   transform-origin: 50% 50% -20px;
 }
-#contact .container-sosmed .btn-12:hover span:nth-child(1) {
+#contact #container-sosmed .container-sosmed .btn-12:hover span:nth-child(1) {
   box-shadow: inset 2px 2px 2px 0px rgba(255, 255, 255, 0.5), 7px 7px 20px 0px rgba(0, 0, 0, 0.1), 4px 4px 5px 0px rgba(0, 0, 0, 0.1);
   transform: rotateX(0deg);
 }
-#contact .container-sosmed .btn-12:hover span:nth-child(2) {
+#contact #container-sosmed .container-sosmed .btn-12:hover span:nth-child(2) {
   box-shadow: inset 2px 2px 2px 0px rgba(255, 255, 255, 0.5), 7px 7px 20px 0px rgba(0, 0, 0, 0.1), 4px 4px 5px 0px rgba(0, 0, 0, 0.1);
   color: transparent;
   transform: rotateX(-90deg);
 }
+#contact #text-animation {
+  margin: 0 auto;
+}
+#contact #text-animation .text-animation {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  padding: 1rem 0;
+}
+#contact #text-animation .text-animation h2 {
+  text-transform: uppercase;
+  font-size: 2rem;
+  color: white;
+  animation: blurSequence 3s ease-in backwards infinite alternate;
+}
+#contact #text-animation .text-animation .frame-1 {
+  animation-delay: 0s;
+}
+#contact #text-animation .text-animation .frame-2 {
+  animation-delay: 0.5s;
+}
+#contact #text-animation .text-animation .frame-3 {
+  animation-delay: 1s;
+}
+#contact #text-animation .text-animation .frame-4 {
+  animation-delay: 1.5s;
+}
+#contact #text-animation .text-animation .frame-5 {
+  animation-delay: 2s;
+}
+@keyframes blurSequence {
+  0% {
+    opacity: 0;
+    transform: scale(0);
+  }
+  25%, 75% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(0);
+  }
+}
 
 @media (max-width: 980px) {
-  .container-sosmed {
+  #container-sosmed {
+    height: 24rem !important;
+  }
+  #container-sosmed .container-sosmed {
     flex-direction: column !important;
   }
   .btn-12 {
     margin-top: 1.5rem;
   }
 }
+@media (max-width: 768px) {
+  #container-sosmed {
+    height: 27rem !important;
+  }
+}
 @media (max-width: 576px) {
+  #container-sosmed {
+    height: 35rem !important;
+  }
   .btn-12 {
     margin-top: 3rem !important;
   }

@@ -1,4 +1,4 @@
-alert("Masih ada beberapa bug yang belum diperbaiki");
+alert("Jika terdapat kendala atau bug, silahkan refresh halaman");
 
 $(document).ready(function () {
   let slidePort = 1;

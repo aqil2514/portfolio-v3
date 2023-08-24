@@ -132,6 +132,9 @@
   #container-sosmed {
     height: 27rem !important;
   }
+  #text-animation {
+    display: none;
+  }
 }
 @media (max-width: 576px) {
   #container-sosmed {
